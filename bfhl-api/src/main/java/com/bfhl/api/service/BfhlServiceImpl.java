@@ -17,9 +17,9 @@ import java.util.List;
 public class BfhlServiceImpl implements BfhlService {
 
     // --- Hardcoded user identity fields (change these to your own details) ---
-    private static final String USER_ID      = "john_doe_17091999";
-    private static final String EMAIL        = "john@xyz.com";
-    private static final String ROLL_NUMBER  = "ABCD123";
+    private static final String USER_ID      = "hellcat1234";
+    private static final String EMAIL        = "hellcat@hotmail.com";
+    private static final String ROLL_NUMBER  = "hell123";
 
     @Override
     public BfhlResponse processData(BfhlRequest request) {
@@ -95,7 +95,7 @@ public class BfhlServiceImpl implements BfhlService {
      *  1. Flatten all alphabetic tokens into one character sequence.
      *  2. Reverse the sequence.
      *  3. Apply alternating caps — index 0 → uppercase, index 1 → lowercase, etc.
-     *
+
      * Example: alphabets = ["A", "ABCD", "DOE"]
      *   flattened  →  A A B C D D O E
      *   reversed   →  E O D D C B A A
