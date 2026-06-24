@@ -11,9 +11,9 @@ import java.util.List;
 @Service
 public class BfhlServiceImpl implements BfhlService {
 
-    private static final String USER_ID      = "john_doe_17091999";
-    private static final String EMAIL        = "john@xyz.com";
-    private static final String ROLL_NUMBER  = "ABCD123";
+    private static final String USER_ID      = "hellcat1234";
+    private static final String EMAIL        = "hellcat@hellcat.com";
+    private static final String ROLL_NUMBER  = "hell1234";
 
     @Override
     public BfhlResponse processData(BfhlRequest request) {
