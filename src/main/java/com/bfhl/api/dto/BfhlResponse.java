@@ -3,9 +3,7 @@ package com.bfhl.api.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-/**
- * Response DTO – returned to the client after processing the input array.
- */
+
 public class BfhlResponse {
 
     @JsonProperty("is_success")

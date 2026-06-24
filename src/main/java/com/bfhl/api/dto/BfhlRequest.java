@@ -3,9 +3,7 @@ package com.bfhl.api.dto;
 import jakarta.validation.constraints.NotNull;
 import java.util.List;
 
-/**
- * Request DTO – carries the input array from the client.
- */
+
 public class BfhlRequest {
 
     @NotNull(message = "data field must not be null")

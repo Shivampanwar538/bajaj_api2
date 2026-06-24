@@ -7,16 +7,13 @@ import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * Exposes the single POST /bfhl endpoint.
- */
+
 @RestController
 @RequestMapping("/bfhl")
 public class BfhlController {
 
     private final BfhlService bfhlService;
 
-    // Constructor injection — preferred over @Autowired on a field
     public BfhlController(BfhlService bfhlService) {
         this.bfhlService = bfhlService;
     }

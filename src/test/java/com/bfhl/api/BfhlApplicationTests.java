@@ -37,7 +37,6 @@ class BfhlApplicationTests {
         service = new BfhlServiceImpl();
     }
 
-    // ===== Unit Tests on Service Layer =====
 
     @Test
     @DisplayName("Example A: mixed numbers, letters, special chars")
@@ -120,7 +119,6 @@ class BfhlApplicationTests {
         assertEquals(List.of("ABC", "XYZ"), res.getAlphabets());
     }
 
-    // ===== Integration Tests via MockMvc =====
 
     @Test
     @DisplayName("POST /bfhl returns 200 for valid request")

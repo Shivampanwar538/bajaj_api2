@@ -12,14 +12,10 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Centralised exception handler — catches validation errors and unexpected
- * runtime problems so the caller always gets a clean JSON response.
- */
+
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    // Minimal error envelope
     static class ErrorResponse {
         @JsonProperty("is_success")
         public final boolean isSuccess = false;
@@ -30,7 +26,7 @@ public class GlobalExceptionHandler {
         ErrorResponse(String message) { this.message = message; }
     }
 
-    /** Triggered when @Valid fails on the request body */
+    
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, Object>> handleValidationErrors(
             MethodArgumentNotValidException ex) {
@@ -46,7 +42,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
     }
 
-    /** Triggered when the JSON body is malformed or missing */
+    
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<ErrorResponse> handleUnreadableBody(
             HttpMessageNotReadableException ex) {
@@ -56,7 +52,7 @@ public class GlobalExceptionHandler {
                 .body(new ErrorResponse("Request body is missing or malformed JSON"));
     }
 
-    /** Catch-all for anything unexpected */
+    
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGenericError(Exception ex) {
         return ResponseEntity
